@@ -48,12 +48,28 @@ struct ContentView: View {
     
     var body: some View {
         HomeView()
-//        HStack{
-//            Text(coffeeMachine?.extras[1].name ?? "")
-//        }.onAppear(perform: loadData)
     }
+}
+
+struct CoffeeView: View {
     
-//
+    let coffee:Coffee
+    
+    var body: some View {
+        HStack {
+            Image("lungo")
+                .resizable()
+                .clipShape(Circle())
+                .frame(width:60, height: 60)
+                .clipped()
+            Text(coffee.name)
+            Spacer()
+        }
+        .padding(.leading, 20)
+        .padding(.top, 20)
+        .padding(.bottom, 20)
+        .background(Color(hex: 0xAED7A0))
+    }
 }
 
 struct HomeView: View {
@@ -62,40 +78,48 @@ struct HomeView: View {
             VStack(alignment: .leading) {
                 Text("Tab the machine to start")
                     .padding(.leading, 20)
-                    .padding(.top, -90)
                     .font(.system(size: 30))
-                NavigationLink(destination: CoffeeView()){
+                Spacer()
+                NavigationLink(destination: CoffeesView()){
                     Image("home")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
+                Spacer()
                 Text("How does this work?")
                     .underline()
                     .padding(.leading, 20)
             }
             .navigationBarTitle(Text("Dark Roasted Beans"))
         }
-//        Image(trend.imageName)
-//        .resizable()
-//        .scaledToFit()
     }
 }
 
-struct CoffeeView: View {
+struct CoffeesView: View {
     @State private var coffeeMachine: CoffeeMachine?
     
     
     var body: some View {
-            VStack {
-                
-                VStack {
-                    
+        VStack(alignment: .leading) {
+            HStack {
+                Spacer()
+            }
+            Text("Select your style")
+                .padding(.leading, 20)
+                .font(.system(size: 30))
+            VStack(alignment: .leading) {
+                ForEach(coffeeMachine?.types ?? [], id: \._id){ coffee in
+                    CoffeeView(coffee: coffee)
+                        .cornerRadius(5)
                 }
             }
-            .onAppear(perform: loadData)
-            .navigationTitle("Brew with Lex")
-            .navigationBarBackButtonHidden(true)
-            Text("Please show coffee")
+            .padding(.leading, 20)
+            .padding(.trailing, 20)
+            Spacer()
+        }
+        .onAppear(perform: loadData)
+        .navigationTitle("Brew with Lex")
+        .navigationBarBackButtonHidden(true)
     }
     
     private func loadData() {
@@ -120,3 +144,14 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+extension Color {
+    init(hex: UInt, alpha: Double = 1) {
+        self.init(
+            .sRGB,
+            red: Double((hex >> 16) & 0xff) / 255,
+            green: Double((hex >> 08) & 0xff) / 255,
+            blue: Double((hex >> 00) & 0xff) / 255,
+            opacity: alpha
+        )
+    }
+}
