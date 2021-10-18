@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-struct SubSelection: Decodable {
+struct SubSelection: Decodable, Hashable {
     let _id: String
     var name: String
 }
