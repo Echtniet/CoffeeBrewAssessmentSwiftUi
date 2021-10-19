@@ -14,7 +14,7 @@ struct CoffeeView: View {
     
     var body: some View {
         HStack {
-            Image("lungo")
+            Image((coffee.name != "Ristretto") ? ((coffee.name == "Espresso") ? "expresso" : "cappuccino"):"lungo")
                 .resizable()
                 .clipShape(Circle())
                 .frame(width:60, height: 60)

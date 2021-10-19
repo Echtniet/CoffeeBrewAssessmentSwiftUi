@@ -14,7 +14,7 @@ struct SizeView: View {
 
     var body: some View {
         HStack {
-            Image("small")
+            Image((size != "Large") ? ((size == "Venti") ? "medium" : "small"):"large")
                 .resizable()
                 .clipShape(Circle())
                 .frame(width:60, height: 60)

@@ -15,8 +15,6 @@ struct OverviewView: View {
     @Binding var milk: String
     @Binding var sugar: String
     @State var coffeeMachine: CoffeeMachine
-    @State private var showCoffeeOptions = false
-    
     var body: some View {
         
         VStack (alignment: .leading){
@@ -28,32 +26,18 @@ struct OverviewView: View {
                     
                     Divider()
                     SizeOverviewView(size: self.$size, coffeeMachine: self.coffeeMachine, sizes: coffee.sizes)
-                    Divider()
-                    HStack {
-                        Image("small")
-                            .resizable()
-                            .clipShape(Circle())
-                            .frame(width:60, height: 60)
-                            .clipped()
-                        Text("Milk")
-                            .foregroundColor(Color.white)
-                        Spacer()
-                        Text("Edit")
-                            .foregroundColor(Color.white)
+                    if coffee.extras.contains(coffeeMachine.extras[1]._id) {
+                   
+                        Divider()
+                        MilkOverviewView(milk: self.$milk, coffeeMachine: coffeeMachine)
                     }
-                    Divider()
-                    HStack {
-                        Image("small")
-                            .resizable()
-                            .clipShape(Circle())
-                            .frame(width:60, height: 60)
-                            .clipped()
-                        Text("Sugar")
-                            .foregroundColor(Color.white)
-                        Spacer()
-                        Text("Edit")
-                            .foregroundColor(Color.white)
+                    
+                    if coffee.extras.contains(coffeeMachine.extras[0]._id) {
+                   
+                        Divider()
+                        SugarOverviewView(sugar: self.$sugar, coffeeMachine: coffeeMachine)
                     }
+                    
                 }
                 .padding(.horizontal, 20)
                 .padding(.vertical, 20)

@@ -1,5 +1,5 @@
 //
-//  CoffeeOverviewView.swift
+//  SugarOverviewView.swift
 //  CoffeeBrewAssessmentSwiftUi
 //
 //  Created by Danae Davelaar on 19/10/2021.
@@ -8,32 +8,33 @@
 import Foundation
 import SwiftUI
 
-struct CoffeeOverviewView: View {
+struct SugarOverviewView: View {
     
-    @Binding var coffee: Coffee
+    @Binding var sugar: String
     @State var coffeeMachine: CoffeeMachine
-    @State private var showCoffeeOptions = false
+    @State private var showSugarOptions = false
     
     var body: some View {
         HStack {
-            Image((coffee.name != "Ristretto") ? ((coffee.name == "Espresso") ? "expresso" : "cappuccino"):"lungo")
+            Image("cappuccino")
                 .resizable()
                 .clipShape(Circle())
                 .frame(width:60, height: 60)
                 .clipped()
-            Text(self.coffee.name)
+            Text("Sugar")
                 .foregroundColor(Color.white)
             Spacer()
             Text("Edit")
                 .foregroundColor(Color.white)
                 .onTapGesture {
-                    showCoffeeOptions = !showCoffeeOptions
+                    showSugarOptions = !showSugarOptions
                 }
         }
-        if showCoffeeOptions{
-            ForEach(coffeeMachine.types, id: \._id){ typeCof in
+        if showSugarOptions{
+            
+            ForEach(coffeeMachine.extras[0].subselections, id: \.self){ sub in
                 HStack {
-                    Text(typeCof.name)
+                    Text(sub.name)
                         .foregroundColor(Color.white)
                     Spacer()
                     
@@ -42,8 +43,8 @@ struct CoffeeOverviewView: View {
                 .background(Color(hex: 0xA0CC8C))
                 .cornerRadius(5)
                 .onTapGesture {
-                    self.coffee = typeCof
-                    showCoffeeOptions = !showCoffeeOptions
+                    self.sugar = sub.name
+                    showSugarOptions = !showSugarOptions
                 }
             }
         }
