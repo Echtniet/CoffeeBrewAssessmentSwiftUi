@@ -13,6 +13,7 @@ struct MilkOverviewView: View {
     @Binding var milk: String
     @State var coffeeMachine: CoffeeMachine
     @State private var showMilkOptions = false
+    @State var selected = ""
     
     var body: some View {
         HStack {
@@ -31,21 +32,12 @@ struct MilkOverviewView: View {
                 }
         }
         if showMilkOptions{
-            
-            ForEach(coffeeMachine.extras[1].subselections, id: \.self){ sub in
-                HStack {
-                    Text(sub.name)
-                        .foregroundColor(Color.white)
-                    Spacer()
-                    
+            if showMilkOptions{
+                RadioButtons(selected: self.$selected, subSelections: coffeeMachine.extras[1].subselections)
+                    .onTapGesture {
+                        showMilkOptions = !showMilkOptions
                 }
-                .padding(16)
-                .background(Color(hex: 0xA0CC8C))
-                .cornerRadius(5)
-                .onTapGesture {
-                    self.milk = sub.name
-                    showMilkOptions = !showMilkOptions
-                }
+                
             }
         }
     }
