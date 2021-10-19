@@ -27,7 +27,7 @@ struct ExtrasView: View {
                     ExtraView(extra: extras[extras.firstIndex(where: {$0._id == extra })!].name, subSelections: extras[extras.firstIndex(where: {$0._id == extra })!].subselections)
                         .cornerRadius(5)
                 }
-//                ForEach(coffee.sizes , id: \._id){ size in
+                //                ForEach(coffee.sizes , id: \._id){ size in
 //                    SizeView(size: size)
 //                        .cornerRadius(5)
 //                }
