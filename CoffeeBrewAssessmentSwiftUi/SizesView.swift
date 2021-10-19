@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 struct SizesView: View {
-
-    let coffee: Coffee
+    
+    @State var coffee: Coffee
     let sizes: [Size]
     let extras: [Extra]
-    
+    @State var coffeeMachine: CoffeeMachine
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -25,7 +25,7 @@ struct SizesView: View {
                 .font(.system(size: 30))
             VStack(alignment: .leading) {
                 ForEach(coffee.sizes, id: \.self) { size in
-                    NavigationLink(destination: ExtrasView(coffee: coffee, sizes: sizes, extras: extras)){
+                    NavigationLink(destination: ExtrasView(coffee: self.$coffee, size: sizes[sizes.firstIndex(where: {$0._id == size })!], coffeeMachine: self.coffeeMachine, extras: extras)){
                         SizeView(size: sizes[sizes.firstIndex(where: {$0._id == size })!].name)
                             .cornerRadius(5)
                     }

@@ -22,7 +22,7 @@ struct CoffeesView: View {
                 .font(.system(size: 30))
             VStack(alignment: .leading) {
                 ForEach(coffeeMachine?.types ?? [], id: \._id){ coffee in
-                    NavigationLink(destination: SizesView(coffee: coffee, sizes: coffeeMachine?.sizes ?? [], extras: coffeeMachine?.extras ?? [])){
+                    NavigationLink(destination: SizesView(coffee: coffee,  sizes: coffeeMachine?.sizes ?? [], extras: coffeeMachine?.extras ?? [], coffeeMachine: self.coffeeMachine!)){
                         CoffeeView(coffee: coffee)
                             .cornerRadius(5)
                     }

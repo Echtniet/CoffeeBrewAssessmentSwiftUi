@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD1EBFA8271F055D00558B4B /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EBFA7271F055D00558B4B /* OverviewView.swift */; };
+		AD1EBFAA271F1B6B00558B4B /* CoffeeOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EBFA9271F1B6B00558B4B /* CoffeeOverviewView.swift */; };
+		AD1EBFAC271F1DCF00558B4B /* SizeOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EBFAB271F1DCF00558B4B /* SizeOverviewView.swift */; };
 		ADF7D0E2271E220500DE1A58 /* CoffeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7D0E1271E220500DE1A58 /* CoffeesView.swift */; };
 		ADF7D0E4271E225800DE1A58 /* SizesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7D0E3271E225800DE1A58 /* SizesView.swift */; };
 		ADF7D0E6271E22A000DE1A58 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7D0E5271E22A000DE1A58 /* HomeView.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD1EBFA7271F055D00558B4B /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		AD1EBFA9271F1B6B00558B4B /* CoffeeOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeOverviewView.swift; sourceTree = "<group>"; };
+		AD1EBFAB271F1DCF00558B4B /* SizeOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeOverviewView.swift; sourceTree = "<group>"; };
 		ADF7D0E1271E220500DE1A58 /* CoffeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeesView.swift; sourceTree = "<group>"; };
 		ADF7D0E3271E225800DE1A58 /* SizesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizesView.swift; sourceTree = "<group>"; };
 		ADF7D0E5271E22A000DE1A58 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -65,11 +71,14 @@
 		C0E74AA9271DCC4E005CB0DC /* CoffeeBrewAssessmentSwiftUi */ = {
 			isa = PBXGroup;
 			children = (
+				AD1EBFA9271F1B6B00558B4B /* CoffeeOverviewView.swift */,
+				AD1EBFAB271F1DCF00558B4B /* SizeOverviewView.swift */,
 				C0E74AAA271DCC4E005CB0DC /* CoffeeBrewAssessmentSwiftUiApp.swift */,
 				C0E74AAC271DCC4E005CB0DC /* ContentView.swift */,
 				ADF7D0E9271E230C00DE1A58 /* SizeView.swift */,
 				ADF7D0ED271E262200DE1A58 /* ExtraView.swift */,
 				ADF7D0E7271E22C600DE1A58 /* CoffeeView.swift */,
+				AD1EBFA7271F055D00558B4B /* OverviewView.swift */,
 				ADF7D0E5271E22A000DE1A58 /* HomeView.swift */,
 				ADF7D0E3271E225800DE1A58 /* SizesView.swift */,
 				ADF7D0EB271E253300DE1A58 /* ExtrasView.swift */,
@@ -161,12 +170,15 @@
 				C0E74AAD271DCC4E005CB0DC /* ContentView.swift in Sources */,
 				ADF7D0EE271E262200DE1A58 /* ExtraView.swift in Sources */,
 				ADF7D0E2271E220500DE1A58 /* CoffeesView.swift in Sources */,
+				AD1EBFA8271F055D00558B4B /* OverviewView.swift in Sources */,
 				ADF7D0E8271E22C600DE1A58 /* CoffeeView.swift in Sources */,
 				ADF7D0EA271E230C00DE1A58 /* SizeView.swift in Sources */,
 				C0E74AAB271DCC4E005CB0DC /* CoffeeBrewAssessmentSwiftUiApp.swift in Sources */,
 				ADF7D0EC271E253300DE1A58 /* ExtrasView.swift in Sources */,
 				ADF7D0E6271E22A000DE1A58 /* HomeView.swift in Sources */,
 				ADF7D0E4271E225800DE1A58 /* SizesView.swift in Sources */,
+				AD1EBFAC271F1DCF00558B4B /* SizeOverviewView.swift in Sources */,
+				AD1EBFAA271F1B6B00558B4B /* CoffeeOverviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

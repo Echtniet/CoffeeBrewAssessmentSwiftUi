@@ -10,8 +10,12 @@ import SwiftUI
 
 struct ExtrasView: View {
 
-    let coffee: Coffee
-    let sizes: [Size]
+    @Binding var coffee: Coffee
+    @State var size: Size
+    @State var milk = "Oat"
+    @State var sugar = "A lot"
+    @State var coffeeMachine: CoffeeMachine
+    //let sizes: [Size]
     let extras: [Extra]
     
     var body: some View {
@@ -23,10 +27,29 @@ struct ExtrasView: View {
                 .padding(.leading, 20)
                 .font(.system(size: 30))
             VStack(alignment: .leading) {
-                ForEach(coffee.extras, id: \.self) { extra in
-                    ExtraView(extra: extras[extras.firstIndex(where: {$0._id == extra })!].name, subSelections: extras[extras.firstIndex(where: {$0._id == extra })!].subselections)
-                        .cornerRadius(5)
+                
+                ScrollView(.vertical){
+                    ForEach(coffee.extras, id: \.self) { extra in
+                        ExtraView(extra: extras[extras.firstIndex(where: {$0._id == extra })!].name, subSelections: extras[extras.firstIndex(where: {$0._id == extra })!].subselections)
+                            .cornerRadius(5)
+                    }
                 }
+                
+                
+                Spacer()
+                NavigationLink(destination: OverviewView(coffee: self.$coffee, size: self.$size, milk: self.$milk, sugar: self.$sugar, coffeeMachine: self.coffeeMachine)){
+                    HStack {
+                        
+                        Text("Overview")
+                            .foregroundColor(Color.white)
+                        Spacer()
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 40)
+                    .background(Color(hex: 0xAED7A0))
+                    .cornerRadius(5)
+                }
+                
                 //                ForEach(coffee.sizes , id: \._id){ size in
 //                    SizeView(size: size)
 //                        .cornerRadius(5)
