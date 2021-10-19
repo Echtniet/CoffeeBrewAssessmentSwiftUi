@@ -29,11 +29,16 @@ struct ExtraView: View {
                 Spacer()
             }
             .contentShape(Rectangle())
-            .onTapGesture { showOptions = !showOptions }
+            .onTapGesture {
+                withAnimation(){
+                    showOptions.toggle()
+                }
+            }
             if showOptions {
                 Divider()
                     .background(Color.white)
                 RadioButtons(selected: self.$selected, subSelections: subSelections)
+                    //.transition(.opacity)
             }
         }
         .padding(20)

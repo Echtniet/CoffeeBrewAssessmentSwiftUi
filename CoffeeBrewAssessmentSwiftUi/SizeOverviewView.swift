@@ -29,7 +29,9 @@ struct SizeOverviewView: View {
             Text("Edit")
                 .foregroundColor(Color.white)
                 .onTapGesture {
-                    showSizeOptions = !showSizeOptions
+                    withAnimation{
+                        showSizeOptions.toggle()
+                    }
                 }
         }
         if showSizeOptions{
@@ -46,7 +48,9 @@ struct SizeOverviewView: View {
                 .cornerRadius(5)
                 .onTapGesture {
                     self.size = coffeeMachine.sizes[coffeeMachine.sizes.firstIndex(where: {$0._id == typeSize})!]
-                    showSizeOptions = !showSizeOptions
+                    withAnimation{
+                        showSizeOptions.toggle()
+                    }
                 }
             }
         }

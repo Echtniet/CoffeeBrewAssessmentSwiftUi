@@ -27,7 +27,9 @@ struct CoffeeOverviewView: View {
             Text("Edit")
                 .foregroundColor(Color.white)
                 .onTapGesture {
-                    showCoffeeOptions = !showCoffeeOptions
+                    withAnimation{
+                        showCoffeeOptions.toggle()
+                    }
                 }
         }
         if showCoffeeOptions{
@@ -43,7 +45,9 @@ struct CoffeeOverviewView: View {
                 .cornerRadius(5)
                 .onTapGesture {
                     self.coffee = typeCof
-                    showCoffeeOptions = !showCoffeeOptions
+                    withAnimation{
+                        showCoffeeOptions.toggle()
+                    }
                 }
             }
         }

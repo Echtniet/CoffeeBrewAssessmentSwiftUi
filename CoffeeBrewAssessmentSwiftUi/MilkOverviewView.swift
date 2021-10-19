@@ -28,17 +28,19 @@ struct MilkOverviewView: View {
             Text("Edit")
                 .foregroundColor(Color.white)
                 .onTapGesture {
-                    showMilkOptions = !showMilkOptions
+                    withAnimation{
+                        showMilkOptions.toggle()
+                    }
                 }
         }
         if showMilkOptions{
-            if showMilkOptions{
-                RadioButtons(selected: self.$selected, subSelections: coffeeMachine.extras[1].subselections)
-                    .onTapGesture {
-                        showMilkOptions = !showMilkOptions
-                }
-                
+            RadioButtons(selected: self.$selected, subSelections: coffeeMachine.extras[1].subselections)
+                .onTapGesture {
+                    withAnimation{
+                        showMilkOptions.toggle()
+                    }
             }
+            
         }
     }
 }

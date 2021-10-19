@@ -28,13 +28,17 @@ struct SugarOverviewView: View {
             Text("Edit")
                 .foregroundColor(Color.white)
                 .onTapGesture {
-                    showSugarOptions = !showSugarOptions
+                    withAnimation{
+                        showSugarOptions.toggle()
+                    }
                 }
         }
         if showSugarOptions{
             RadioButtons(selected: self.$selected, subSelections: coffeeMachine.extras[0].subselections)
                 .onTapGesture {
-                    showSugarOptions = !showSugarOptions
+                    withAnimation{
+                        showSugarOptions.toggle()
+                    }
             }
             
         }
