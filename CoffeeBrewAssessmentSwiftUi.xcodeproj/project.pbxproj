@@ -14,6 +14,16 @@
 		AD1EBFAE271F278100558B4B /* SugarOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EBFAD271F278100558B4B /* SugarOverviewView.swift */; };
 		AD1EBFB0271F2C4E00558B4B /* MilkOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EBFAF271F2C4E00558B4B /* MilkOverviewView.swift */; };
 		AD1EBFB2271F2D5F00558B4B /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EBFB1271F2D5F00558B4B /* RadioButtonView.swift */; };
+		AD8ACE58272B3D2D00DF18B3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8ACE57272B3D2D00DF18B3 /* WidgetKit.framework */; };
+		AD8ACE5A272B3D2D00DF18B3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8ACE59272B3D2D00DF18B3 /* SwiftUI.framework */; };
+		AD8ACE5D272B3D2D00DF18B3 /* MyOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8ACE5C272B3D2D00DF18B3 /* MyOrder.swift */; };
+		AD8ACE60272B3D3400DF18B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD8ACE5F272B3D3400DF18B3 /* Assets.xcassets */; };
+		AD8ACE62272B3D3400DF18B3 /* MyOrder.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = AD8ACE5E272B3D2D00DF18B3 /* MyOrder.intentdefinition */; };
+		AD8ACE63272B3D3400DF18B3 /* MyOrder.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = AD8ACE5E272B3D2D00DF18B3 /* MyOrder.intentdefinition */; };
+		AD8ACE66272B3D3400DF18B3 /* MyOrderExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AD8ACE55272B3D2D00DF18B3 /* MyOrderExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AD8ACE6E272B3E9500DF18B3 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8ACE6D272B3E9500DF18B3 /* Order.swift */; };
+		AD8ACE6F272B3EA800DF18B3 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8ACE6D272B3E9500DF18B3 /* Order.swift */; };
+		AD8ACE73272B4A2100DF18B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E74AAE271DCC52005CB0DC /* Assets.xcassets */; };
 		ADF7D0E2271E220500DE1A58 /* CoffeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7D0E1271E220500DE1A58 /* CoffeesView.swift */; };
 		ADF7D0E4271E225800DE1A58 /* SizesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7D0E3271E225800DE1A58 /* SizesView.swift */; };
 		ADF7D0E6271E22A000DE1A58 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7D0E5271E22A000DE1A58 /* HomeView.swift */; };
@@ -27,6 +37,30 @@
 		C0E74AB2271DCC52005CB0DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E74AB1271DCC52005CB0DC /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AD8ACE64272B3D3400DF18B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0E74A9F271DCC4E005CB0DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD8ACE54272B3D2D00DF18B3;
+			remoteInfo = MyOrderExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AD8ACE6A272B3D3400DF18B3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AD8ACE66272B3D3400DF18B3 /* MyOrderExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		AD0482FD272ADA2200C5CFB9 /* CoffeeMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeMachine.swift; sourceTree = "<group>"; };
 		AD1EBFA7271F055D00558B4B /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
@@ -35,6 +69,16 @@
 		AD1EBFAD271F278100558B4B /* SugarOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarOverviewView.swift; sourceTree = "<group>"; };
 		AD1EBFAF271F2C4E00558B4B /* MilkOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilkOverviewView.swift; sourceTree = "<group>"; };
 		AD1EBFB1271F2D5F00558B4B /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
+		AD8ACE50272B3B5100DF18B3 /* CoffeeBrewAssessmentSwiftUi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoffeeBrewAssessmentSwiftUi.entitlements; sourceTree = "<group>"; };
+		AD8ACE55272B3D2D00DF18B3 /* MyOrderExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyOrderExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD8ACE57272B3D2D00DF18B3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		AD8ACE59272B3D2D00DF18B3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		AD8ACE5C272B3D2D00DF18B3 /* MyOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrder.swift; sourceTree = "<group>"; };
+		AD8ACE5E272B3D2D00DF18B3 /* MyOrder.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = MyOrder.intentdefinition; sourceTree = "<group>"; };
+		AD8ACE5F272B3D3400DF18B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD8ACE61272B3D3400DF18B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD8ACE6D272B3E9500DF18B3 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		AD8ACE70272B3FB800DF18B3 /* MyOrderExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyOrderExtension.entitlements; sourceTree = "<group>"; };
 		ADF7D0E1271E220500DE1A58 /* CoffeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeesView.swift; sourceTree = "<group>"; };
 		ADF7D0E3271E225800DE1A58 /* SizesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizesView.swift; sourceTree = "<group>"; };
 		ADF7D0E5271E22A000DE1A58 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -50,6 +94,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AD8ACE52272B3D2D00DF18B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD8ACE5A272B3D2D00DF18B3 /* SwiftUI.framework in Frameworks */,
+				AD8ACE58272B3D2D00DF18B3 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0E74AA4271DCC4E005CB0DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,11 +121,34 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		AD8ACE56272B3D2D00DF18B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD8ACE57272B3D2D00DF18B3 /* WidgetKit.framework */,
+				AD8ACE59272B3D2D00DF18B3 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD8ACE5B272B3D2D00DF18B3 /* MyOrder */ = {
+			isa = PBXGroup;
+			children = (
+				AD8ACE5C272B3D2D00DF18B3 /* MyOrder.swift */,
+				AD8ACE5E272B3D2D00DF18B3 /* MyOrder.intentdefinition */,
+				AD8ACE5F272B3D3400DF18B3 /* Assets.xcassets */,
+				AD8ACE61272B3D3400DF18B3 /* Info.plist */,
+			);
+			path = MyOrder;
+			sourceTree = "<group>";
+		};
 		C0E74A9E271DCC4E005CB0DC = {
 			isa = PBXGroup;
 			children = (
+				AD8ACE70272B3FB800DF18B3 /* MyOrderExtension.entitlements */,
 				AD0482FF272ADA3600C5CFB9 /* Classes */,
 				C0E74AA9271DCC4E005CB0DC /* CoffeeBrewAssessmentSwiftUi */,
+				AD8ACE5B272B3D2D00DF18B3 /* MyOrder */,
+				AD8ACE56272B3D2D00DF18B3 /* Frameworks */,
 				C0E74AA8271DCC4E005CB0DC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				C0E74AA7271DCC4E005CB0DC /* CoffeeBrewAssessmentSwiftUi.app */,
+				AD8ACE55272B3D2D00DF18B3 /* MyOrderExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +165,7 @@
 		C0E74AA9271DCC4E005CB0DC /* CoffeeBrewAssessmentSwiftUi */ = {
 			isa = PBXGroup;
 			children = (
+				AD8ACE50272B3B5100DF18B3 /* CoffeeBrewAssessmentSwiftUi.entitlements */,
 				AD1EBFA9271F1B6B00558B4B /* CoffeeOverviewView.swift */,
 				AD1EBFAB271F1DCF00558B4B /* SizeOverviewView.swift */,
 				C0E74AAA271DCC4E005CB0DC /* CoffeeBrewAssessmentSwiftUiApp.swift */,
@@ -105,6 +183,7 @@
 				ADF7D0E1271E220500DE1A58 /* CoffeesView.swift */,
 				C0E74AAE271DCC52005CB0DC /* Assets.xcassets */,
 				C0E74AB0271DCC52005CB0DC /* Preview Content */,
+				AD8ACE6D272B3E9500DF18B3 /* Order.swift */,
 			);
 			path = CoffeeBrewAssessmentSwiftUi;
 			sourceTree = "<group>";
@@ -120,6 +199,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AD8ACE54272B3D2D00DF18B3 /* MyOrderExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD8ACE67272B3D3400DF18B3 /* Build configuration list for PBXNativeTarget "MyOrderExtension" */;
+			buildPhases = (
+				AD8ACE51272B3D2D00DF18B3 /* Sources */,
+				AD8ACE52272B3D2D00DF18B3 /* Frameworks */,
+				AD8ACE53272B3D2D00DF18B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyOrderExtension;
+			productName = MyOrderExtension;
+			productReference = AD8ACE55272B3D2D00DF18B3 /* MyOrderExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C0E74AA6271DCC4E005CB0DC /* CoffeeBrewAssessmentSwiftUi */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0E74AB5271DCC52005CB0DC /* Build configuration list for PBXNativeTarget "CoffeeBrewAssessmentSwiftUi" */;
@@ -127,10 +223,12 @@
 				C0E74AA3271DCC4E005CB0DC /* Sources */,
 				C0E74AA4271DCC4E005CB0DC /* Frameworks */,
 				C0E74AA5271DCC4E005CB0DC /* Resources */,
+				AD8ACE6A272B3D3400DF18B3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AD8ACE65272B3D3400DF18B3 /* PBXTargetDependency */,
 			);
 			name = CoffeeBrewAssessmentSwiftUi;
 			productName = CoffeeBrewAssessmentSwiftUi;
@@ -147,6 +245,9 @@
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					AD8ACE54272B3D2D00DF18B3 = {
+						CreatedOnToolsVersion = 13.0;
+					};
 					C0E74AA6271DCC4E005CB0DC = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -166,11 +267,21 @@
 			projectRoot = "";
 			targets = (
 				C0E74AA6271DCC4E005CB0DC /* CoffeeBrewAssessmentSwiftUi */,
+				AD8ACE54272B3D2D00DF18B3 /* MyOrderExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AD8ACE53272B3D2D00DF18B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD8ACE73272B4A2100DF18B3 /* Assets.xcassets in Resources */,
+				AD8ACE60272B3D3400DF18B3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0E74AA5271DCC4E005CB0DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,10 +294,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AD8ACE51272B3D2D00DF18B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD8ACE6F272B3EA800DF18B3 /* Order.swift in Sources */,
+				AD8ACE5D272B3D2D00DF18B3 /* MyOrder.swift in Sources */,
+				AD8ACE62272B3D3400DF18B3 /* MyOrder.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0E74AA3271DCC4E005CB0DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD8ACE63272B3D3400DF18B3 /* MyOrder.intentdefinition in Sources */,
 				C0E74AAD271DCC4E005CB0DC /* ContentView.swift in Sources */,
 				ADF7D0EE271E262200DE1A58 /* ExtraView.swift in Sources */,
 				ADF7D0E2271E220500DE1A58 /* CoffeesView.swift in Sources */,
@@ -198,6 +320,7 @@
 				ADF7D0EC271E253300DE1A58 /* ExtrasView.swift in Sources */,
 				AD1EBFB2271F2D5F00558B4B /* RadioButtonView.swift in Sources */,
 				ADF7D0E6271E22A000DE1A58 /* HomeView.swift in Sources */,
+				AD8ACE6E272B3E9500DF18B3 /* Order.swift in Sources */,
 				AD0482FE272ADA2200C5CFB9 /* CoffeeMachine.swift in Sources */,
 				ADF7D0E4271E225800DE1A58 /* SizesView.swift in Sources */,
 				AD1EBFAC271F1DCF00558B4B /* SizeOverviewView.swift in Sources */,
@@ -208,7 +331,71 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AD8ACE65272B3D3400DF18B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD8ACE54272B3D2D00DF18B3 /* MyOrderExtension */;
+			targetProxy = AD8ACE64272B3D3400DF18B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		AD8ACE68272B3D3400DF18B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MyOrderExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3NASZH28DK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyOrder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyOrder;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = clinton.CoffeeBrewAssessmentSwiftUi.MyOrder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD8ACE69272B3D3400DF18B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MyOrderExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3NASZH28DK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyOrder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyOrder;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = clinton.CoffeeBrewAssessmentSwiftUi.MyOrder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C0E74AB3271DCC52005CB0DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -328,8 +515,10 @@
 		C0E74AB6271DCC52005CB0DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CoffeeBrewAssessmentSwiftUi/CoffeeBrewAssessmentSwiftUi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CoffeeBrewAssessmentSwiftUi/Preview Content\"";
@@ -358,8 +547,10 @@
 		C0E74AB7271DCC52005CB0DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CoffeeBrewAssessmentSwiftUi/CoffeeBrewAssessmentSwiftUi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CoffeeBrewAssessmentSwiftUi/Preview Content\"";
@@ -388,6 +579,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AD8ACE67272B3D3400DF18B3 /* Build configuration list for PBXNativeTarget "MyOrderExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD8ACE68272B3D3400DF18B3 /* Debug */,
+				AD8ACE69272B3D3400DF18B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C0E74AA2271DCC4E005CB0DC /* Build configuration list for PBXProject "CoffeeBrewAssessmentSwiftUi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
