@@ -9,7 +9,7 @@ import WidgetKit
 import SwiftUI
 
 struct OrderEntry: TimelineEntry {
-    let date = Date()
+    let date: Date
     let order: Order
 }
 
@@ -20,20 +20,24 @@ struct Provider: TimelineProvider {
     
     func getSnapshot(in context: Context, completion: @escaping (OrderEntry) -> Void) {
         guard let order = try? JSONDecoder().decode(Order.self, from: orderData) else { return }
-        let entry =  OrderEntry(order: order)
+        let entry =  OrderEntry(date: Date(), order: order)
         completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<OrderEntry>) -> Void) {
         guard let order = try? JSONDecoder().decode(Order.self, from: orderData) else { return }
         
-        let entry =  OrderEntry(order: order)
+        let date = Date()
+        let entry =  OrderEntry(date: date, order: order)
+        
+        //let nextUpdateDate = Calendar.current.date(byAdding: .second, value: 15, to: date)!
+            
         let timeline = Timeline(entries: [entry], policy: .atEnd )
         completion(timeline)
     }
     
     func placeholder(in context: Context) -> OrderEntry {
-        OrderEntry(order: Order(id: "2", cofName: "N/A", size: "N/A", milk: "N/A", sugar: "N/A"))
+        OrderEntry(date: Date(), order: Order(id: "2", cofName: "N/A", size: "N/A", milk: "N/A", sugar: "N/A"))
     }
 }
 
