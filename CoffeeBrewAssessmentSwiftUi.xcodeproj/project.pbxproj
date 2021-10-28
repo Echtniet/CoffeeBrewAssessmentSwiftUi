@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0482FE272ADA2200C5CFB9 /* CoffeeMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0482FD272ADA2200C5CFB9 /* CoffeeMachine.swift */; };
 		AD1EBFA8271F055D00558B4B /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EBFA7271F055D00558B4B /* OverviewView.swift */; };
 		AD1EBFAA271F1B6B00558B4B /* CoffeeOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EBFA9271F1B6B00558B4B /* CoffeeOverviewView.swift */; };
 		AD1EBFAC271F1DCF00558B4B /* SizeOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EBFAB271F1DCF00558B4B /* SizeOverviewView.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD0482FD272ADA2200C5CFB9 /* CoffeeMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeMachine.swift; sourceTree = "<group>"; };
 		AD1EBFA7271F055D00558B4B /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		AD1EBFA9271F1B6B00558B4B /* CoffeeOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeOverviewView.swift; sourceTree = "<group>"; };
 		AD1EBFAB271F1DCF00558B4B /* SizeOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeOverviewView.swift; sourceTree = "<group>"; };
@@ -58,9 +60,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD0482FF272ADA3600C5CFB9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AD0482FD272ADA2200C5CFB9 /* CoffeeMachine.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		C0E74A9E271DCC4E005CB0DC = {
 			isa = PBXGroup;
 			children = (
+				AD0482FF272ADA3600C5CFB9 /* Classes */,
 				C0E74AA9271DCC4E005CB0DC /* CoffeeBrewAssessmentSwiftUi */,
 				C0E74AA8271DCC4E005CB0DC /* Products */,
 			);
@@ -187,6 +198,7 @@
 				ADF7D0EC271E253300DE1A58 /* ExtrasView.swift in Sources */,
 				AD1EBFB2271F2D5F00558B4B /* RadioButtonView.swift in Sources */,
 				ADF7D0E6271E22A000DE1A58 /* HomeView.swift in Sources */,
+				AD0482FE272ADA2200C5CFB9 /* CoffeeMachine.swift in Sources */,
 				ADF7D0E4271E225800DE1A58 /* SizesView.swift in Sources */,
 				AD1EBFAC271F1DCF00558B4B /* SizeOverviewView.swift in Sources */,
 				AD1EBFAA271F1B6B00558B4B /* CoffeeOverviewView.swift in Sources */,

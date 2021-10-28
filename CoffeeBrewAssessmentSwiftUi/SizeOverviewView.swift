@@ -10,20 +10,21 @@ import SwiftUI
 
 struct SizeOverviewView: View {
     
-    @Binding var size: Size
-    @State var coffeeMachine: CoffeeMachine
+    @ObservedObject var coffeeMac: CoffeeMachineClass
+//    @Binding var size: Size
+//    @State var coffeeMachine: CoffeeMachine
     @State private var showSizeOptions = false
     
-    let sizes: [String]
+    //let sizes: [String]
     
     var body: some View {
         HStack {
-            Image((size.name != "Large") ? ((size.name == "Venti") ? "medium" : "small"):"large")
+            Image((coffeeMac.size.name != "Large") ? ((coffeeMac.size.name == "Venti") ? "medium" : "small"):"large")
                 .resizable()
                 .clipShape(Circle())
                 .frame(width:60, height: 60)
                 .clipped()
-            Text(self.size.name)
+            Text(coffeeMac.size.name)
                 .foregroundColor(Color.white)
             Spacer()
             Text("Edit")
@@ -36,9 +37,9 @@ struct SizeOverviewView: View {
         }
         if showSizeOptions{
             
-            ForEach(sizes, id: \.self){ typeSize in
+            ForEach(coffeeMac.coffee.sizes, id: \.self){ typeSize in
                 HStack {
-                    Text(coffeeMachine.sizes[coffeeMachine.sizes.firstIndex(where: {$0._id == typeSize})!].name)
+                    Text(coffeeMac.sizes![coffeeMac.sizes!.firstIndex(where: {$0._id == typeSize})!].name)
                         .foregroundColor(Color.white)
                     Spacer()
                     
@@ -47,7 +48,7 @@ struct SizeOverviewView: View {
                 .background(Color(hex: 0xA0CC8C))
                 .cornerRadius(5)
                 .onTapGesture {
-                    self.size = coffeeMachine.sizes[coffeeMachine.sizes.firstIndex(where: {$0._id == typeSize})!]
+                    coffeeMac.size = coffeeMac.sizes![coffeeMac.sizes!.firstIndex(where: {$0._id == typeSize})!]
                     withAnimation{
                         showSizeOptions.toggle()
                     }

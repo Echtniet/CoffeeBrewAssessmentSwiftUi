@@ -10,21 +10,41 @@ import SwiftUI
 
 struct ExtraView: View {
     
-    @State private var showOptions = false
-    @State var selected = ""
+    @ObservedObject var coffeeMac: CoffeeMachineClass
+    
+    @State private var showCoffeeOptions = false
+    @State private var showMilkOptions = false
 
-    let extra:String
-    let subSelections: [SubSelection]
+//    let extra:String
+//    let subSelections: [SubSelection]
+    
+    var body: some View {
+        if coffeeMac.coffee.extras.contains(coffeeMac.extras![1]._id) {
+            ExtraInfoView(coffeeMac: coffeeMac, selected: coffeeMac.selectedMilk, milk: 1)
+        }
+        if coffeeMac.coffee.extras.contains(coffeeMac.extras![0]._id) {
+            ExtraInfoView(coffeeMac: coffeeMac, selected: coffeeMac.selectedCoffee, milk: 0)
+        }
+        
+    }
+}
+
+struct ExtraInfoView: View {
+    @ObservedObject var coffeeMac: CoffeeMachineClass
+    
+    @State private var showOptions = false
+    @State var selected: String
+    var milk: Int
     
     var body: some View {
         VStack {
             HStack {
-                Image((extra == "Select the amount of sugar") ? "cappuccino":"milk")
+                Image((coffeeMac.extras![milk].name == "Select the amount of sugar") ? "cappuccino":"milk")
                     .resizable()
                     .clipShape(Circle())
                     .frame(width:60, height: 60)
                     .clipped()
-                Text(extra)
+                Text(coffeeMac.extras![milk].name)
                     .foregroundColor(Color.white)
                 Spacer()
             }
@@ -37,14 +57,13 @@ struct ExtraView: View {
             if showOptions {
                 Divider()
                     .background(Color.white)
-                RadioButtons(selected: self.$selected, subSelections: subSelections)
+                RadioButtons(coffeeMac: coffeeMac, selected: self.$selected, milk: milk, subSelections: coffeeMac.extras![milk].subselections)
                     //.transition(.opacity)
             }
         }
         .padding(20)
         .background(Color(hex: 0xAED7A0))
-       
+        
     }
 }
-
 

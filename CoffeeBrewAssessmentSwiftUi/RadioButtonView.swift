@@ -9,9 +9,10 @@ import Foundation
 import SwiftUI
 
 struct RadioButtons: View {
+    @ObservedObject var coffeeMac: CoffeeMachineClass
     @Binding var selected: String
     //@Binding var show: Bool
-    
+    var milk: Int
     let subSelections: [SubSelection]
     
     var body: some View {
@@ -19,6 +20,11 @@ struct RadioButtons: View {
         ForEach(subSelections, id: \.self) { sub in
             Button(action: {
                 self.selected = sub.name
+                if milk == 1{
+                    coffeeMac.selectedMilk = sub.name
+                }else{
+                    coffeeMac.selectedCoffee = sub.name
+                }
             }) {
                 HStack {
                     Text(sub.name)

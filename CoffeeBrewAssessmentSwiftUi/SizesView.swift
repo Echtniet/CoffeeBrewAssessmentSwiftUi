@@ -10,10 +10,12 @@ import SwiftUI
 
 struct SizesView: View {
     
-    @State var coffee: Coffee
-    let sizes: [Size]
-    let extras: [Extra]
-    @State var coffeeMachine: CoffeeMachine
+    @ObservedObject var coffeeMac: CoffeeMachineClass
+    
+//    @State var coffee: Coffee
+//    let sizes: [Size]
+//    let extras: [Extra]
+//    @State var coffeeMachine: CoffeeMachine
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -24,12 +26,26 @@ struct SizesView: View {
                 .padding(.leading, 20)
                 .font(.system(size: 30))
             VStack(alignment: .leading) {
-                ForEach(coffee.sizes, id: \.self) { size in
-                    NavigationLink(destination: ExtrasView(coffee: self.$coffee, size: sizes[sizes.firstIndex(where: {$0._id == size })!], coffeeMachine: self.coffeeMachine, extras: extras)){
-                        SizeView(size: sizes[sizes.firstIndex(where: {$0._id == size })!].name)
+                
+                ForEach(coffeeMac.coffee.sizes, id: \.self) { size in
+                    VStack {
+                        NavigationLink(destination: ExtrasView(coffeeMac: coffeeMac)){
+                            SizeView(size: coffeeMac.sizes![coffeeMac.sizes!.firstIndex(where: { $0._id == size })!].name
+                            )
                             .cornerRadius(5)
+                        }
                     }
+                    .simultaneousGesture(TapGesture().onEnded{
+                        coffeeMac.size = coffeeMac.sizes![coffeeMac.sizes!.firstIndex(where: { $0._id == size })!]
+                    })
                 }
+                
+//                ForEach(coffee.sizes, id: \.self) { size in
+//                    NavigationLink(destination: ExtrasView(coffee: self.$coffee, size: sizes[sizes.firstIndex(where: {$0._id == size })!], coffeeMachine: self.coffeeMachine, extras: extras)){
+//                        SizeView(size: sizes[sizes.firstIndex(where: {$0._id == size })!].name)
+//                            .cornerRadius(5)
+//                    }
+//                }
 //                ForEach(coffee.sizes , id: \._id){ size in
 //                    SizeView(size: size)
 //                        .cornerRadius(5)
@@ -39,5 +55,11 @@ struct SizesView: View {
             .padding(.trailing, 20)
             Spacer()
         }
+    }
+}
+
+struct RandoTestView: View {
+    var body: some View {
+        Text("YES!")
     }
 }

@@ -10,7 +10,9 @@ import SwiftUI
 
 struct CoffeesView: View {
     @State private var coffeeMachine: CoffeeMachine?
+    @State private var coffeeMachineC: CoffeeMachineClass?
     
+    @ObservedObject private var coffeeMac = CoffeeMachineClass()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,19 +23,25 @@ struct CoffeesView: View {
                 .padding(.leading, 20)
                 .font(.system(size: 30))
             VStack(alignment: .leading) {
-                ForEach(coffeeMachine?.types ?? [], id: \._id){ coffee in
-                    NavigationLink(destination: SizesView(coffee: coffee,  sizes: coffeeMachine?.sizes ?? [], extras: coffeeMachine?.extras ?? [], coffeeMachine: self.coffeeMachine!)){
-                        CoffeeView(coffee: coffee)
-                            .cornerRadius(5)
+                ForEach(coffeeMac.types ?? [], id: \._id){ coffee in
+                    VStack {
+                        NavigationLink(destination: SizesView(coffeeMac: coffeeMac)
+                                        //SizesView(coffee: coffee, sizes: coffeeMachineC?.sizes ?? [], extras: coffeeMachineC?.extras ?? [], coffeeMachine: coffeeMachine!)
+                        ){
+                            CoffeeView(coffee: coffee)
+                                .cornerRadius(5)
+                        }
                     }
-                    
+                    .simultaneousGesture(TapGesture().onEnded{
+                        coffeeMac.coffee = coffee
+                    })
                 }
             }
             .padding(.leading, 20)
             .padding(.trailing, 20)
             Spacer()
         }
-        .onAppear(perform: loadData)
+        .onAppear { coffeeMac.loadData()}
         .navigationTitle("Brew with Lex")
         .navigationBarBackButtonHidden(true)
     }
@@ -46,7 +54,8 @@ struct CoffeesView: View {
             guard let data = data else { return }
             if let decodedData = try? JSONDecoder().decode(CoffeeMachine.self, from: data){
                 DispatchQueue.main.async {
-                    self.coffeeMachine = decodedData
+                    coffeeMachine = decodedData
+                    //coffeeMachineC = CoffeeMachineClass(_id: decodedData._id, types: decodedData.types, sizes: decodedData.sizes, extras: decodedData.extras)
                 }
             }
         }.resume()

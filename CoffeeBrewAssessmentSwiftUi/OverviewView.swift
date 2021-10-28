@@ -10,11 +10,13 @@ import SwiftUI
 
 struct OverviewView: View {
     
-    @Binding var coffee: Coffee
-    @Binding var size: Size
-    @Binding var milk: String
-    @Binding var sugar: String
-    @State var coffeeMachine: CoffeeMachine
+    @ObservedObject var coffeeMac: CoffeeMachineClass
+    
+//    @Binding var coffee: Coffee
+//    @Binding var size: Size
+//    @Binding var milk: String
+//    @Binding var sugar: String
+//    @State var coffeeMachine: CoffeeMachine
     var body: some View {
         
         VStack (alignment: .leading){
@@ -22,20 +24,20 @@ struct OverviewView: View {
                 .font(.system(size: 30))
             ScrollView (.vertical) {
                 VStack {
-                    CoffeeOverviewView(coffee: self.$coffee, coffeeMachine: self.coffeeMachine)
+                    CoffeeOverviewView(coffeeMac: coffeeMac)
                     
                     Divider()
-                    SizeOverviewView(size: self.$size, coffeeMachine: self.coffeeMachine, sizes: coffee.sizes)
-                    if coffee.extras.contains(coffeeMachine.extras[1]._id) {
-                   
+                    SizeOverviewView(coffeeMac: coffeeMac)
+                    if coffeeMac.coffee.extras.contains(coffeeMac.extras![1]._id) {
+
                         Divider()
-                        MilkOverviewView(milk: self.$milk, coffeeMachine: coffeeMachine)
+                        MilkOverviewView(coffeeMac: coffeeMac, selected: coffeeMac.selectedMilk)
                     }
-                    
-                    if coffee.extras.contains(coffeeMachine.extras[0]._id) {
-                   
+//
+                    if coffeeMac.coffee.extras.contains(coffeeMac.extras![0]._id) {
+
                         Divider()
-                        SugarOverviewView(sugar: self.$sugar, coffeeMachine: coffeeMachine)
+                        SugarOverviewView(coffeeMac: coffeeMac, selected: coffeeMac.selectedCoffee)
                     }
                     
                 }

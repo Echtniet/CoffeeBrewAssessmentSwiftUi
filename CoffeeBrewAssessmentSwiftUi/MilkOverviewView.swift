@@ -10,10 +10,11 @@ import SwiftUI
 
 struct MilkOverviewView: View {
     
-    @Binding var milk: String
-    @State var coffeeMachine: CoffeeMachine
+    @ObservedObject var coffeeMac: CoffeeMachineClass
+//    @Binding var milk: String
+//    @State var coffeeMachine: CoffeeMachine
     @State private var showMilkOptions = false
-    @State var selected = ""
+    @State var selected: String
     
     var body: some View {
         HStack {
@@ -34,7 +35,7 @@ struct MilkOverviewView: View {
                 }
         }
         if showMilkOptions{
-            RadioButtons(selected: self.$selected, subSelections: coffeeMachine.extras[1].subselections)
+            RadioButtons(coffeeMac: coffeeMac, selected: self.$selected, milk: 1, subSelections: coffeeMac.extras![1].subselections)
                 .onTapGesture {
                     withAnimation{
                         showMilkOptions.toggle()

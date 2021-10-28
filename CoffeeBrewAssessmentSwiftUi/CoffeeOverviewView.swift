@@ -10,18 +10,19 @@ import SwiftUI
 
 struct CoffeeOverviewView: View {
     
-    @Binding var coffee: Coffee
-    @State var coffeeMachine: CoffeeMachine
+    @ObservedObject var coffeeMac: CoffeeMachineClass
+//    @Binding var coffee: Coffee
+//    @State var coffeeMachine: CoffeeMachine
     @State private var showCoffeeOptions = false
     
     var body: some View {
         HStack {
-            Image((coffee.name != "Ristretto") ? ((coffee.name == "Espresso") ? "expresso" : "cappuccino"):"lungo")
+            Image((coffeeMac.coffee.name != "Ristretto") ? ((coffeeMac.coffee.name == "Espresso") ? "expresso" : "cappuccino"):"lungo")
                 .resizable()
                 .clipShape(Circle())
                 .frame(width:60, height: 60)
                 .clipped()
-            Text(self.coffee.name)
+            Text(coffeeMac.coffee.name)
                 .foregroundColor(Color.white)
             Spacer()
             Text("Edit")
@@ -33,7 +34,7 @@ struct CoffeeOverviewView: View {
                 }
         }
         if showCoffeeOptions{
-            ForEach(coffeeMachine.types, id: \._id){ typeCof in
+            ForEach(coffeeMac.types!, id: \._id){ typeCof in
                 HStack {
                     Text(typeCof.name)
                         .foregroundColor(Color.white)
@@ -44,7 +45,7 @@ struct CoffeeOverviewView: View {
                 .background(Color(hex: 0xA0CC8C))
                 .cornerRadius(5)
                 .onTapGesture {
-                    self.coffee = typeCof
+                    coffeeMac.coffee = typeCof
                     withAnimation{
                         showCoffeeOptions.toggle()
                     }

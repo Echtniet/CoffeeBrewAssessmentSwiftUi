@@ -8,31 +8,31 @@
 import SwiftUI
 import Combine
 
-struct SubSelection: Decodable, Hashable {
+struct SubSelection: Codable, Hashable {
     let _id: String
     var name: String
 }
 
-struct Extra: Decodable {
+struct Extra: Codable, Hashable  {
     let _id: String
     var name: String
     var subselections: [SubSelection]
     
 }
 
-struct Size: Decodable {
+struct Size: Codable, Hashable {
     let _id: String
     var name: String
 }
 
-struct Coffee: Decodable {
+struct Coffee: Codable {
     let _id: String
     var name: String
     var sizes: [String]
     var extras: [String]
 }
 
-struct CoffeeMachine: Decodable {
+struct CoffeeMachine: Codable {
     let _id: String
     var types: [Coffee]
     var sizes: [Size]
