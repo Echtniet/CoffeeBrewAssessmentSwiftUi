@@ -11,7 +11,6 @@ import SwiftUI
 struct RadioButtons: View {
     @ObservedObject var coffeeMac: CoffeeMachineClass
     @Binding var selected: String
-    //@Binding var show: Bool
     var milk: Int
     let subSelections: [SubSelection]
     

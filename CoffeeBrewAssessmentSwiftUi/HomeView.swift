@@ -32,7 +32,6 @@ struct HomeView: View {
                     .padding(.leading, 20)
             }
             .navigationBarTitle(Text("Dark Roasted Beans"))
-            //.navigationBarItems(leading: backButton)
         }
     }
 }

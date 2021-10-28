@@ -41,8 +41,6 @@ struct CoffeeMachine: Codable {
 
 struct ContentView: View {
     
-//    @State private var coffeeMachine: CoffeeMachine?
-    
     var body: some View {
         HomeView()
     }

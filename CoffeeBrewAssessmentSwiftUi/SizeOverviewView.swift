@@ -11,11 +11,7 @@ import SwiftUI
 struct SizeOverviewView: View {
     
     @ObservedObject var coffeeMac: CoffeeMachineClass
-//    @Binding var size: Size
-//    @State var coffeeMachine: CoffeeMachine
     @State private var showSizeOptions = false
-    
-    //let sizes: [String]
     
     var body: some View {
         HStack {

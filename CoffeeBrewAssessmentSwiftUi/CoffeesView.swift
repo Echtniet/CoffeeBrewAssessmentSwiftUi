@@ -9,9 +9,6 @@ import SwiftUI
 
 
 struct CoffeesView: View {
-    @State private var coffeeMachine: CoffeeMachine?
-    @State private var coffeeMachineC: CoffeeMachineClass?
-    
     @ObservedObject private var coffeeMac = CoffeeMachineClass()
     
     var body: some View {
@@ -26,7 +23,6 @@ struct CoffeesView: View {
                 ForEach(coffeeMac.types ?? [], id: \._id){ coffee in
                     VStack {
                         NavigationLink(destination: SizesView(coffeeMac: coffeeMac)
-                                        //SizesView(coffee: coffee, sizes: coffeeMachineC?.sizes ?? [], extras: coffeeMachineC?.extras ?? [], coffeeMachine: coffeeMachine!)
                         ){
                             CoffeeView(coffee: coffee)
                                 .cornerRadius(5)
@@ -44,21 +40,5 @@ struct CoffeesView: View {
         .onAppear { coffeeMac.loadData()}
         .navigationTitle("Brew with Lex")
         .navigationBarBackButtonHidden(true)
-    }
-    
-    private func loadData() {
-        guard let url = URL(string: "https://darkroastedbeans.coffeeit.nl/coffee-machine/60ba1ab72e35f2d9c786c610") else {
-                return
-            }
-        URLSession.shared.dataTask(with: url) {data, response, error in
-            guard let data = data else { return }
-            if let decodedData = try? JSONDecoder().decode(CoffeeMachine.self, from: data){
-                DispatchQueue.main.async {
-                    coffeeMachine = decodedData
-                    //coffeeMachineC = CoffeeMachineClass(_id: decodedData._id, types: decodedData.types, sizes: decodedData.sizes, extras: decodedData.extras)
-                }
-            }
-        }.resume()
-
     }
 }

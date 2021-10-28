@@ -11,8 +11,6 @@ import SwiftUI
 struct CoffeeOverviewView: View {
     
     @ObservedObject var coffeeMac: CoffeeMachineClass
-//    @Binding var coffee: Coffee
-//    @State var coffeeMachine: CoffeeMachine
     @State private var showCoffeeOptions = false
     
     var body: some View {

@@ -12,11 +12,6 @@ struct OverviewView: View {
     
     @ObservedObject var coffeeMac: CoffeeMachineClass
     
-//    @Binding var coffee: Coffee
-//    @Binding var size: Size
-//    @Binding var milk: String
-//    @Binding var sugar: String
-//    @State var coffeeMachine: CoffeeMachine
     var body: some View {
         
         VStack (alignment: .leading){
@@ -33,7 +28,7 @@ struct OverviewView: View {
                         Divider()
                         MilkOverviewView(coffeeMac: coffeeMac, selected: coffeeMac.selectedMilk)
                     }
-//
+
                     if coffeeMac.coffee.extras.contains(coffeeMac.extras![0]._id) {
 
                         Divider()

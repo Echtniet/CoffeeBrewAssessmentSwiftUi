@@ -11,11 +11,7 @@ import SwiftUI
 struct SizesView: View {
     
     @ObservedObject var coffeeMac: CoffeeMachineClass
-    
-//    @State var coffee: Coffee
-//    let sizes: [Size]
-//    let extras: [Extra]
-//    @State var coffeeMachine: CoffeeMachine
+
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -39,17 +35,6 @@ struct SizesView: View {
                         coffeeMac.size = coffeeMac.sizes![coffeeMac.sizes!.firstIndex(where: { $0._id == size })!]
                     })
                 }
-                
-//                ForEach(coffee.sizes, id: \.self) { size in
-//                    NavigationLink(destination: ExtrasView(coffee: self.$coffee, size: sizes[sizes.firstIndex(where: {$0._id == size })!], coffeeMachine: self.coffeeMachine, extras: extras)){
-//                        SizeView(size: sizes[sizes.firstIndex(where: {$0._id == size })!].name)
-//                            .cornerRadius(5)
-//                    }
-//                }
-//                ForEach(coffee.sizes , id: \._id){ size in
-//                    SizeView(size: size)
-//                        .cornerRadius(5)
-//                }
             }
             .padding(.leading, 20)
             .padding(.trailing, 20)

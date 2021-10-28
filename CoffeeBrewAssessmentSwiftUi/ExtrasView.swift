@@ -12,14 +12,6 @@ struct ExtrasView: View {
     
     @ObservedObject var coffeeMac: CoffeeMachineClass
     
-//    @Binding var coffee: Coffee
-//    @State var size: Size
-//    @State var milk = "Oat"
-//    @State var sugar = "A lot"
-//    @State var coffeeMachine: CoffeeMachine
-    //let sizes: [Size]
-    //let extras: [Extra]
-    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -49,11 +41,6 @@ struct ExtrasView: View {
                     .background(Color(hex: 0xAED7A0))
                     .cornerRadius(5)
                 }
-                
-//                ForEach(coffeeMac.coffee.sizes , id: \.self){ size in
-//                    SizeView(size: size)
-//                        .cornerRadius(5)
-//                }
             }
             .padding(.leading, 20)
             .padding(.trailing, 20)

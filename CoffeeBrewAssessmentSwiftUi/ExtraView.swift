@@ -14,9 +14,6 @@ struct ExtraView: View {
     
     @State private var showCoffeeOptions = false
     @State private var showMilkOptions = false
-
-//    let extra:String
-//    let subSelections: [SubSelection]
     
     var body: some View {
         if coffeeMac.coffee.extras.contains(coffeeMac.extras![1]._id) {
@@ -25,7 +22,6 @@ struct ExtraView: View {
         if coffeeMac.coffee.extras.contains(coffeeMac.extras![0]._id) {
             ExtraInfoView(coffeeMac: coffeeMac, selected: coffeeMac.selectedCoffee, milk: 0)
         }
-        
     }
 }
 

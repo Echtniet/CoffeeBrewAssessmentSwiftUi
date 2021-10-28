@@ -11,8 +11,6 @@ import SwiftUI
 struct MilkOverviewView: View {
     
     @ObservedObject var coffeeMac: CoffeeMachineClass
-//    @Binding var milk: String
-//    @State var coffeeMachine: CoffeeMachine
     @State private var showMilkOptions = false
     @State var selected: String
     

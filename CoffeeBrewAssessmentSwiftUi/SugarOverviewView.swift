@@ -10,8 +10,6 @@ import SwiftUI
 
 struct SugarOverviewView: View {
     @ObservedObject var coffeeMac: CoffeeMachineClass
-//    @Binding var sugar: String
-//    @State var coffeeMachine: CoffeeMachine
     @State private var showSugarOptions = false
     @State var selected: String
     
